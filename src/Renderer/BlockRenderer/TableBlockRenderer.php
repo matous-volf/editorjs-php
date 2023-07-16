@@ -21,7 +21,7 @@ final class TableBlockRenderer extends GenericBlockRenderer
         foreach ($block->getCells() as $i => $row) {
             $isHeading = $i == 0 && $block->isWithHeadings();
 
-            $table->append(
+            $table = $table->append(
                 HtmlBuilder::create('tr')
                     ->append(...array_map(
                         fn(string $col) => HtmlBuilder::create($isHeading ? 'th' : 'td')->append($col),
