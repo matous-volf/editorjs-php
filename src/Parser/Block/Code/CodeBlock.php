@@ -28,7 +28,7 @@ final class CodeBlock extends GenericBlock implements CodeBlockInterface
         return new self(
             $block->getId(),
             $block->getType(),
-            $data['data']['body'],
+            $data['data']['code'],
             $block->getData()
         );
     }
@@ -39,13 +39,13 @@ final class CodeBlock extends GenericBlock implements CodeBlockInterface
     }
 
     /**
-     * @psalm-assert array{data: array{body: string}} $data
+     * @psalm-assert array{data: array{code: string}} $data
      */
     protected static function validate(array $data): void
     {
         parent::validate($data);
 
-        Assert::keyExists($data['data'], 'body');
-        Assert::string($data['data']['body']);
+        Assert::keyExists($data['data'], 'code');
+        Assert::string($data['data']['code']);
     }
 }
