@@ -12,5 +12,5 @@ interface TableBlockInterface extends BlockInterface
      * @return array<array-key, array>
      */
     public function getCells(): array;
-    public function isWithHeadings(): array;
+    public function isWithHeadings(): bool;
 }
